@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Veep | VIP Valet Express</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      background: #1a1a1a;
+      color: #eee;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* === Carousel === */
+    .carousel {
+      position: relative;
+      height: 55vh;
+      overflow: hidden;
+    }
+
+    .carousel-images {
+      display: flex;
+      width: 500%;
+      animation: slide 25s infinite ease-in-out;
+    }
+
+    .carousel-images img {
+      width: 100%;
+      height: 55vh;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .carousel-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+      text-align: center;
+      color: #fff;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    .carousel-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .carousel-text p {
+      font-size: 1.2rem;
+      color: #ccc;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    @keyframes slide {
+      0% { transform: translateX(0%); }
+      20% { transform: translateX(0%); }
+      25% { transform: translateX(-100%); }
+      45% { transform: translateX(-100%); }
+      50% { transform: translateX(-200%); }
+      70% { transform: translateX(-200%); }
+      75% { transform: translateX(-300%); }
+      95% { transform: translateX(-300%); }
+      100% { transform: translateX(0%); }
+    }
+
+    nav {
+      background: #111;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      font-weight: 500;
+    }
+
+    nav a {
+      color: #f4f4f4;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #d4af37;
+    }
+
+    .hero {
+      background: #121212;
+      text-align: center;
+      padding: 5rem 2rem;
+    }
+
+    .hero h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      color: #f5f5f5;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: #ccc;
+    }
+
+    .section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .section h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #f5f5f5;
+      position: relative;
+    }
+
+    .section h3::after {
+      content: '';
+      width: 60px;
+      height: 3px;
+      background: #d4af37;
+      display: block;
+      margin: 1rem auto 0;
+      border-radius: 5px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .service {
+      background: #1f1f1f;
+      border: 1px solid #2d2d2d;
+      border-radius: 10px;
+      padding: 2rem;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .service:hover {
+      box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .service h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: #f8f8f8;
+    }
+
+    .about {
+      background: #000;
+      color: #eee;
+      border-radius: 12px;
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+
+    .about p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: auto;
+      color: #bbb;
+    }
+
+    .cta {
+      text-align: center;
+      background: linear-gradient(135deg, #d4af37, #bfa034);
+      color: black;
+      padding: 4rem 2rem;
+      margin-top: 3rem;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta p {
+      margin-bottom: 2rem;
+      font-size: 1.1rem;
+    }
+
+    .cta a {
+      background: black;
+      color: white;
+      padding: 0.9rem 2rem;
+      border-radius: 5px;
+      font-weight: bold;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .cta a:hover {
+      background: #333;
+    }
+
+    footer {
+      background: #000;
+      color: #aaa;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .carousel-text h1 {
+        font-size: 2.2rem;
+      }
+      .hero h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="carousel">
+    <div class="carousel-images">
+      <img src="_Bold Lettering Tumblr Banner (2).png" alt="Valet 1">
+      <img src="_Bold Lettering Tumblr Banner.png" alt="Valet 2">
+      <img src="_Bold Lettering Tumblr Banner.png" alt="Luxury Car">
+      <img src="_Bold Lettering Tumblr Banner (1).png" alt="Valet Night">
+      <img src="_Bold Lettering Tumblr Banner (2).png" alt="Hotel Entrance">
+    </div>
+    <div class="carousel-text">
+      <h1>Veep / VIP Valet Express</h1>
+      <p>Delivering seamless, luxurious valet services for events, businesses, and private clients across Minnesota.</p>
+    </div>
+  </div>
+
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Where First Impressions Begin</h2>
+    <p>Veep brings elite professionalism to every arrival. Whether you're hosting a gala, managing a luxury hotel, or planning a private affair, we ensure your guests are treated like VIPs from the moment they arrive.</p>
+  </section>
+
+  <section class="section" id="services">
+    <h3>Our Services</h3>
+    <div class="services-grid">
+      <div class="service">
+        <h4>Event Valet Parking</h4>
+        <p>Professional valet for weddings, galas, and private events. Discreet, efficient, and always polished.</p>
+      </div>
+      <div class="service">
+        <h4>Corporate & Business</h4>
+        <p>Boost client experience with seamless valet at your office, retail, or high-end corporate event.</p>
+      </div>
+      <div class="service">
+        <h4>Residential Valet</h4>
+        <p>Hosting a luxury gathering at home? Let Veep manage your guests’ vehicles with white-glove care.</p>
+      </div>
+      <div class="service">
+        <h4>Hotel & Hospitality</h4>
+        <p>Elevate your guests’ stay with front-door valet tailored to your brand’s service standards.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about" id="about">
+    <h3>About Veep</h3>
+    <p>Founded in Minnesota, Veep / VIP Valet Express is more than a parking service — we are a premium guest experience provider. Our highly trained team delivers elegant service with a personal touch, handling every vehicle and interaction with care, class, and efficiency.</p>
+  </section>
+
+  <section class="cta" id="contact">
+    <h2>Ready to Impress Your Guests?</h2>
+    <p>Let Veep handle the details while you focus on the moment. Book our luxury valet services today.</p>
+    <a href="mailto:info@veepvalet.com">Contact Us</a>
+  </section>
+
+  <footer>
+    &copy; 2025 Veep / VIP Valet Express. All rights reserved. | Minnesota
+  </footer>
+
+</body>
+</html>
